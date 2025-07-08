@@ -5,7 +5,7 @@ $color-primary-dark: #E54848;
 $color-secondary: #F6F6F6;
 $color-dark: #2A2A2A;
 $color-grey: #999999;
-$color-light-grey: #DDDDDD;
+$color-light-grey: #F6F6F6;
 $color-white: #FFFFFF;
 $color-black: #000000;
 
@@ -44,3 +44,9 @@ $transition-speed: 0.3s ease-in-out;
 // Z‑index
 $z-index-header: 1000;
 $z-index-modal: 2000;
+
+//breackpoint
+$breakpoints-small: 480px;
+$breakpoints-medium: 768px; 
+$breakpoints-large: 1024px;
+$breakpoints-xlarge: 1200px;

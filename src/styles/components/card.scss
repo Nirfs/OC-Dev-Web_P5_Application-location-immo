@@ -1,0 +1,26 @@
+@use '../abstract/mixins' as m;
+@use '../abstract/variables' as v;
+
+    .card {
+        height: 340px;
+        overflow: hidden; 
+        position: relative;
+        border-radius: 10px;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit:cover;
+            display: block;
+        }
+        p{
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            color: v.$color-white;
+            font-size: v.$font-size-lg;
+            width: 70%;
+            font-weight: v.$font-weight-bold;
+            text-shadow: 5px 2px 5px v.$color-black;
+        }
+    }

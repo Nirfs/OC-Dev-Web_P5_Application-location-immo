@@ -19,21 +19,13 @@
   }
 }
 
-// media queries (breakpoints)
-$breakpoints: (small: 480px, medium: 768px, large: 1024px, xlarge: 1200px,
-);
-
-@mixin respond-to($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    @media (max-width: map-get($breakpoints, $breakpoint)) {
-      @content;
-    }
-  } @else {
-    @warn "Breakpoint #{$breakpoint} non défini dans $breakpoints.";
+@mixin media($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
   }
 }
 
 // transition animation
-@mixin transition($properties: all, $duration: 0.3s, $timing: ease-in-out) {
+@mixin transition($properties: all, $duration: 5s, $timing: ease-in-out) {
   transition: $properties $duration $timing;
 }

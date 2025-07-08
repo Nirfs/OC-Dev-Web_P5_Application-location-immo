@@ -1,5 +1,5 @@
-@use './abstract/mixins' as m;
-@use './abstract/variables' as v;
+@use '../abstract/mixins' as m;
+@use '../abstract/variables' as v;
 
 footer{
     @include m.flexbox(column, center, center, 32px);

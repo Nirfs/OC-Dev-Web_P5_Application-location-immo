@@ -1,6 +1,5 @@
-
-@use './abstract/mixins' as m;
-@use './abstract/variables' as v;
+@use '../abstract/mixins' as m;
+@use '../abstract/variables' as v;
 
 header {
   @include m.flexbox(row, space-between, center);
@@ -15,12 +14,13 @@ header {
 
         &::after{
             content:"";
-            position: absolute;
 
-            background: v.$color-black;
+            position: absolute;
             bottom: 0;
             top: 30px;
             left: 50%;
+            
+            background: v.$color-black;
             width: 0;         
             height: 2px;
             @include m.transition(width, 0.4s, ease);
