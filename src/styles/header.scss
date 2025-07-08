@@ -1,0 +1,36 @@
+
+@use './abstract/mixins' as m;
+@use './abstract/variables' as v;
+
+header {
+  @include m.flexbox(row, space-between, center);
+    padding: 50px 0 ;
+    nav{
+        @include m.flexbox($gap: 65px);
+        font-size: v.$font-size-xl;
+        a{  
+            color: v.$color-black;
+            position: relative;
+            font-weight: 500;
+
+        &::after{
+            content:"";
+            position: absolute;
+
+            background: v.$color-black;
+            bottom: 0;
+            top: 30px;
+            left: 50%;
+            width: 0;         
+            height: 2px;
+            @include m.transition(width, 0.4s, ease);
+            transform: translateX(-50%);
+            }
+
+            &:hover::after,
+            &.active::after{
+                width: 100%;
+            }
+        }
+    }
+}
