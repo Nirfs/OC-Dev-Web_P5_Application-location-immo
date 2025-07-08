@@ -1,0 +1,39 @@
+// flexbox
+@mixin flexbox($direction: null, $justify: null, $align: null, $gap: null) {
+  display: flex;
+
+  @if $direction != null {
+    flex-direction: $direction;
+  }
+
+  @if $justify != null {
+    justify-content: $justify;
+  }
+
+  @if $align != null {
+    align-items: $align;
+  }
+
+  @if $gap != null {
+    gap: $gap;
+  }
+}
+
+// media queries (breakpoints)
+$breakpoints: (small: 480px, medium: 768px, large: 1024px, xlarge: 1200px,
+);
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint #{$breakpoint} non défini dans $breakpoints.";
+  }
+}
+
+// transition animation
+@mixin transition($properties: all, $duration: 0.3s, $timing: ease-in-out) {
+  transition: $properties $duration $timing;
+}

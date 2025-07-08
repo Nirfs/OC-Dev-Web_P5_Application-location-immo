@@ -1,0 +1,25 @@
+@use './abstract/mixins' as m;
+@use './abstract/variables' as v;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: v.$font-family-base;
+  font-size: v.$font-size-md;
+  line-height: v.$line-height-base;
+  background-color: v.$color-white;
+  color: v.$color-dark;
+}
+
+.main-container{
+    margin: 0 100px;
+}
+
+a{
+    text-decoration: none;
+    color: v.$color-black;
+}
