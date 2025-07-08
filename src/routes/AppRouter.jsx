@@ -1,10 +1,11 @@
 import {createBrowserRouter, RouterProvider } from 'react-router-dom';
+
 import {Home} from '../pages/Home';
 import {About} from '../pages/About';
 import {NotFound} from '../pages/NotFound';
 import { Accomodation } from '../pages/Accommodation';
 import {Layout}  from '../Layout/Layout';
-import { getAnnounce } from '../Api/ApiDataCall';
+import { getAnnounce } from '../api/ApiDataCall';
 
 const router = createBrowserRouter([
     {    
@@ -17,12 +18,12 @@ const router = createBrowserRouter([
                 loader: () => getAnnounce()
             },
             {
-                path:'about', 
+                path:'apropos', 
                 element:<About/>,
                 loader: () => getAnnounce()
             },
             {
-                path:'accomodation/:id', 
+                path:'logement/:id', 
                 element:<Accomodation/>,
                 loader: () => getAnnounce()
             },
@@ -38,6 +39,7 @@ export default function AppRouter() {
     return (
     <RouterProvider
       router={router}
+      fallbackElement={<p>Chargement en cours…</p>} // ✅ Ajouté
     />
   );
 }
