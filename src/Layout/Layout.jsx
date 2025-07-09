@@ -6,13 +6,11 @@ import "@/styles/global.scss";
 export function Layout(){ 
     return(
         <>
-        <div className='main-container'>
-            <Header/>
-            <main>
+            <div className='main-container'>
+                <Header/>
                 <Outlet/>
-            </main>
-        </div>
-        <Footer/>
-    </>
+            </div>
+            <Footer/>
+        </>
     )
 }

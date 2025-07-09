@@ -4,10 +4,10 @@ import '@/styles/components/card.scss'
 export function Card({src, alt, text, navLink}){
     return(
         <NavLink to={navLink}>   
-            <div className="card">
+             <article className="card">
                 <img src={src} alt={alt}/>
-                <p>{text}</p>
-            </div>
+                <h2>{text}</h2>
+            </article>
         </NavLink>
     )
 }
