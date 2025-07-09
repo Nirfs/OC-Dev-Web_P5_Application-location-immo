@@ -4,33 +4,24 @@
 header {
   @include m.flexbox(row, space-between, center);
     padding: 50px 0 ;
+
+    @include m.media(v.$breakpoints-medium){
+        padding: 20px 0;
+    }
+
+    img{
+        width: clamp(145px, 20vw, 210px);
+    }
+
     nav{
         @include m.flexbox($gap: 65px);
-        font-size: v.$font-size-xl;
-        a{  
-            color: v.$color-black;
-            position: relative;
-            font-weight: 500;
+        font-size: clamp(v.$space-sm, 2vw, v.$font-size-xl);
 
-        &::after{
-            content:"";
-
-            position: absolute;
-            bottom: 0;
-            top: 30px;
-            left: 50%;
-            
-            background: v.$color-black;
-            width: 0;         
-            height: 2px;
-            @include m.transition(width, 0.4s, ease);
-            transform: translateX(-50%);
-            }
-
-            &:hover::after,
-            &.active::after{
-                width: 100%;
-            }
+        @include m.media(v.$breakpoints-medium){
+            @include m.flexbox($gap: 25px);
+            padding: 20px 0 ;
         }
+        
+        @include m.linkHover();
     }
 }

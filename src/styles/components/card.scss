@@ -2,7 +2,7 @@
 @use '../abstract/variables' as v;
 
     .card {
-        height: 340px;
+        height: clamp(255px, 25vw, 340px);
         overflow: hidden; 
         position: relative;
         border-radius: 10px;
@@ -13,7 +13,7 @@
             object-fit:cover;
             display: block;
         }
-        p{
+        h2{
             position: absolute;
             bottom: 10%;
             left: 5%;

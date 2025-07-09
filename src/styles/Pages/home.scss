@@ -1,7 +1,7 @@
 @use '../abstract/mixins' as m;
 @use '../abstract/variables' as v;
 
-.card-container{
+.gallery{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     background-color: v.$color-light-grey;
@@ -15,9 +15,6 @@
 
    @include m.media(v.$breakpoints-large) {
         grid-template-columns: 1fr;
-    } 
-
-    @include m.media(v.$breakpoints-medium) {
         padding: 0px;
         background-color: transparent;
     } 
