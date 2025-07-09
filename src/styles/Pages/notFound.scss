@@ -1,0 +1,28 @@
+@use '../abstract/mixins' as m;
+@use '../abstract/variables' as v;
+
+.error-Container{
+    margin-bottom: 90px;
+    @include m.media(v.$breakpoints-small){
+        margin: 90px 0 90px 0;
+    }
+
+    @include m.flexbox(column, center, center, 90px);
+    h1{
+        color: v.$color-primary;
+        font-size: clamp(96px, 15vw, 288px);
+    }
+
+    p{
+        color: v.$color-primary;
+        font-size: clamp(v.$font-size-mg, 3vw, v.$font-size-xxl);
+        @include m.media(v.$breakpoints-medium){
+            text-align: center;
+            width: 80%;
+        }
+    }
+    a{
+        font-size: clamp(v.$font-size-sm, 2vw, v.$font-size-mg)
+    }
+    @include m.linkHover();
+}
