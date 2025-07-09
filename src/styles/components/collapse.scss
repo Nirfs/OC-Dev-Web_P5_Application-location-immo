@@ -1,0 +1,38 @@
+@use '../abstract/mixins' as m;
+@use '../abstract/variables' as v;
+
+    .collapse-bar{
+        @include m.flexbox(row, space-between, center);
+        background-color: v.$color-primary;
+        padding: 10px 20px;
+        transition: all 0.3s ease;
+        border-radius: 10px;
+        i{
+            color: v.$color-white;
+            transform: rotate(0deg);
+            transition: all 0.3s ease;
+        }
+        &.open{
+            i{
+                transform: rotate(-180deg);
+            }
+        }
+        .title{
+            color: v.$color-white;
+            font-size: clamp(v.$font-size-sm, 3vw, v.$font-size-mg);
+            font-weight: v.$font-weight-bold;
+        }
+    }
+    .text {
+        max-height: 0;
+        overflow: hidden;
+        @include m.transition();
+        padding: 0 15px;
+
+        p{
+            font-size: clamp(v.$font-size-xs, 3vw, v.$font-size-mg);
+            padding: 5px 20px;
+        }
+    }
+
+    

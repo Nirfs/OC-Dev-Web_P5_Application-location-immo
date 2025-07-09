@@ -10,17 +10,13 @@
 body {
   font-family: v.$font-family-base;
   font-size: v.$font-size-md;
-  line-height: v.$line-height-base;
+  line-height: v.$line-height-normal;
   background-color: v.$color-white;
   color: v.$color-dark;
 }
 
 .main-container{
-    margin: 0 100px;
-
-    @include m.media(v.$breakpoints-medium) {
-      margin: 0 20px;
-    } 
+    margin: 0 clamp(20px, 4vw, 100px);
 }
 
 a{
