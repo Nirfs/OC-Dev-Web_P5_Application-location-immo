@@ -1,0 +1,39 @@
+@use '../abstract/mixins' as m;
+@use '../abstract/variables' as v;
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  height: clamp(255px, 30vw, 415px);
+  border-radius: 25px;
+  margin-bottom: 10px;
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+  .button-container {
+    color: white;
+  }
+
+  .fa-chevron-left,
+  .fa-chevron-right {
+    font-size: clamp(v.$font-size-xl, 5vw, v.$font-size-xxxxl);
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  .fa-chevron-left {
+    left: 5%;
+  }
+
+  .fa-chevron-right {
+    right: 5%;
+  }
+}
