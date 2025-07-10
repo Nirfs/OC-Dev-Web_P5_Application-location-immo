@@ -1,33 +1,22 @@
 import { Link, NavLink } from 'react-router-dom';
 import '@/styles/components/header.scss'
 import kasaLogo from '@/assets/logoKasa.svg'
-import { useEffect, useState } from 'react';
+import { useScreenWidth } from "@/hook/useScreenWidth.jsx"
 
 export function Header(){
-    const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+    const screenWidth = useScreenWidth()
+    const screenSizeBreak = 1024
 
-    useEffect(() => {
-        function handleResize() {
-            setScreenWidth(window.innerWidth);
-        }
-
-        window.addEventListener('resize', handleResize);
-
-        return () => 
-            {
-                window.removeEventListener('resize', handleResize)
-            }
-    }, []);
-
-    
     return(
         <header>
-            <Link to='/'>
-                <img src={kasaLogo} alt="Retour à la page d'accueil Kasa"></img>
-            </Link>
+            <h1>
+                <Link to='/'>
+                    <img src={kasaLogo} alt="Retour à la page d'accueil Kasa"></img>
+                </Link>
+            </h1>
             <nav aria-label="Menu principal">
-                <NavLink to='/'>{screenWidth > 768  ? "Accueil" : "ACCUEIL"}</NavLink>
-                <NavLink to='/apropos'>{screenWidth > 768  ? "A propos" : "A PROPOS"}</NavLink>
+                <NavLink to='/'>{screenWidth > screenSizeBreak  ? "Accueil" : "ACCUEIL"}</NavLink>
+                <NavLink to='/apropos'>{screenWidth > screenSizeBreak  ? "A propos" : "A PROPOS"}</NavLink>
             </nav>
         </header>
     )
