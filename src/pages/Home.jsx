@@ -12,10 +12,17 @@ export function Home() {
   
   return (
     <main>
-      <SubHeader src={subHeadercliff} alt="paysage de falaise" text="Chez vous, partout et ailleurs"/>
+      <SubHeader src={subHeadercliff} alt="paysage de falaise" 
+        text={
+        <>
+        Chez vous,<br className="mobile-break" /> partout et ailleurs
+        </>
+        } 
+        brightness="dark"
+    />
       <section className="gallery" aria-label="Liste des logements">
         {data.map((post) => (
-          <Card key={post.id} src={post.cover} alt={post.title} text={post.title} navLink={`/logement/${post.id}`}/>
+          <Card key={post.id} src={post.cover} alt={`photo d'un ${post.title}`} text={post.title} navLink={`/logement/${post.id}`}/>
         ))}
       </section>
     </main>

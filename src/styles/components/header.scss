@@ -2,10 +2,11 @@
 @use '../abstract/variables' as v;
 
 header {
-  @include m.flexbox(row, space-between, center);
     padding: 50px 0 ;
+    @include m.flexbox(row, space-between, center);
 
-    @include m.media(v.$breakpoints-medium){
+
+    @include m.media(v.$breakpoints-large){
         padding: 20px 0;
     }
 
@@ -14,12 +15,14 @@ header {
     }
 
     nav{
-        @include m.flexbox($gap: 65px);
         font-size: clamp(v.$space-sm, 2vw, v.$font-size-xl);
+        @include m.flexbox($gap: 65px);
 
-        @include m.media(v.$breakpoints-medium){
-            @include m.flexbox($gap: 25px);
+
+        @include m.media(v.$breakpoints-large){
             padding: 20px 0 ;
+            @include m.flexbox($gap: 25px);
+
         }
         
         @include m.linkHover();

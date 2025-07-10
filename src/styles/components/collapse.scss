@@ -2,11 +2,13 @@
 @use '../abstract/variables' as v;
 
     .collapse-bar{
-        @include m.flexbox(row, space-between, center);
+        width: 100%;
+        border: none;
         background-color: v.$color-primary;
-        padding: 10px 20px;
+        padding: clamp(10px, 2vw, 15px) 20px;
         transition: all 0.3s ease;
-        border-radius: 10px;
+        border-radius: 5px;
+        @include m.flexbox(row, space-between, center);
         i{
             color: v.$color-white;
             transform: rotate(0deg);
@@ -19,7 +21,7 @@
         }
         .title{
             color: v.$color-white;
-            font-size: clamp(v.$font-size-sm, 3vw, v.$font-size-mg);
+            font-size: clamp(v.$font-size-sm, 4vw, v.$font-size-xl);
             font-weight: v.$font-weight-bold;
         }
     }
@@ -27,7 +29,7 @@
         max-height: 0;
         overflow: hidden;
         @include m.transition();
-        padding: 0 15px;
+        padding: 0px 15px;
 
         p{
             font-size: clamp(v.$font-size-xs, 3vw, v.$font-size-mg);

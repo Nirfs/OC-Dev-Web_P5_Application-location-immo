@@ -2,22 +2,24 @@
 
 // flexbox
 @mixin flexbox($direction: null, $justify: null, $align: null, $gap: null) {
-  display: flex;
+  &{
+      display: flex;
 
-  @if $direction != null {
-    flex-direction: $direction;
-  }
+    @if $direction != null {
+      flex-direction: $direction;
+    }
 
-  @if $justify != null {
-    justify-content: $justify;
-  }
+    @if $justify != null {
+      justify-content: $justify;
+    }
 
-  @if $align != null {
-    align-items: $align;
-  }
+    @if $align != null {
+      align-items: $align;
+    }
 
-  @if $gap != null {
-    gap: $gap;
+    @if $gap != null {
+      gap: $gap;
+    }
   }
 }
 

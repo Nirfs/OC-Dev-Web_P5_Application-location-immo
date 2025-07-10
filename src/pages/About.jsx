@@ -4,9 +4,9 @@ import { Collapse } from "@/components/Collapse"
 import '@/styles/Pages/about.scss'
 export function About(){
     return (
-        <div>
-            <SubHeader src={subHeadermoutain}/>
-            <div className="about-collapse-container">
+        <main>
+            <SubHeader src={subHeadermoutain} alt="photo de montagne avec une vallée en premier plan" brightness="light"/>
+            <section className="about-collapse-container">
                 <Collapse title="Fiabilité" 
                 text={<p>Les annonces postées sur Kasa garantissent une fiabilité totale.
                 Les photos sont conformes aux logements, et toutes les informations sont régulièrement 
@@ -28,7 +28,7 @@ export function About(){
                     une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les 
                     standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.</p>}
                 />
-            </div>
-        </div>
+            </section>
+        </main>
     )
 }

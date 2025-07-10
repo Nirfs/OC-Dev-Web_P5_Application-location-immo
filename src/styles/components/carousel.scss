@@ -15,18 +15,16 @@ img {
   display: block;
 }
 
-  .button-container {
-    color: white;
-  }
-
   .fa-chevron-left,
   .fa-chevron-right {
+    color: white;
     font-size: clamp(v.$font-size-xl, 5vw, v.$font-size-xxxxl);
     cursor: pointer;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
+    text-shadow: 5px 2px 30px v.$color-black;
   }
 
   .fa-chevron-left {
@@ -35,5 +33,15 @@ img {
 
   .fa-chevron-right {
     right: 5%;
+  }
+
+  .carousel-status{
+    text-shadow: 5px 2px 15px v.$color-black;
+    color: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    margin-bottom: 30px;
   }
 }

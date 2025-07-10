@@ -6,7 +6,7 @@ export function Card({src, alt, text, navLink}){
         <NavLink to={navLink}>   
              <article className="card">
                 <img src={src} alt={alt}/>
-                <h2>{text}</h2>
+                <h3>{text}</h3>
             </article>
         </NavLink>
     )

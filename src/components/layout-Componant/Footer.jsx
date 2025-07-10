@@ -5,7 +5,7 @@ export function Footer(){
     return(
         <footer>
             <img src={kasaLogoW} alt="" aria-hidden="true" />
-            <p>© 2020 Kasa. All rights reserved</p>
+            <small>© 2020 Kasa. All rights reserved</small>
         </footer>
     )
 }

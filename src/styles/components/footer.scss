@@ -2,14 +2,13 @@
 @use '../abstract/variables' as v;
 
 footer{
-    @include m.flexbox(column, center, center, 32px);
     margin-top: 40px;
     padding: 50px 0 20px 0;
     width: 100%;
     background-color: v.$color-black;
     color: v.$color-white;
     font-size: clamp(v.$space-sm, 2vw, v.$font-size-xl);
-
+    @include m.flexbox(column, center, center, 32px);
     @include m.media(v.$breakpoints-small){
         p{
             width: 30%;

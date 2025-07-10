@@ -20,12 +20,12 @@ export function Accomodation() {
   if (!logement) return <NotFound />;
 
   return (
-    <>
+    <main>
       <Carousel data={logement} />
 
       <div className="title-container">
         <div className="title">
-          <h1>{logement.title}</h1>
+          <h2>{logement.title}</h2>
           <p className="location">{logement.location}</p>
           <div className="tag-container">
             {logement.tags.map((tag, index) => (
@@ -52,7 +52,7 @@ export function Accomodation() {
       </div>
 
       <div className="accomodation-collapse-container">
-        <Collapse title="Description" text={<p>{logement.description}</p>} />
+        <Collapse title="Description" text={<p>{logement.description} </p>} headingLevel="h3" />
         <Collapse
           title="Équipements"
           text={logement.equipments.map((equipement, index) => (
@@ -60,6 +60,6 @@ export function Accomodation() {
           ))}
         />
       </div>
-    </>
+    </main>
   );
 }

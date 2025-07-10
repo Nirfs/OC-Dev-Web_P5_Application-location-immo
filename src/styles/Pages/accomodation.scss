@@ -6,7 +6,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 80px;
   @include m.media(v.$breakpoints-medium) {
-    @include m.flexbox(column, center, center, 20px);
+  @include m.flexbox(column, center, center, 20px);
     .collpase-Container{
         width: 100%;
     }
@@ -14,15 +14,14 @@
 }
 
 .title-container {
-  @include m.flexbox(row, space-between, flex-start, 20px);
   margin-bottom: 20px;
-
+  @include m.flexbox(row, space-between, flex-start, 20px);
   @include m.media(v.$breakpoints-medium) {
     @include m.flexbox(column);
   }
 
   .title {
-    h1 {
+    h2 {
       font-weight: v.$font-weight-medium;
       font-size: clamp(v.$font-size-mg, 3vw, v.$font-size-xxl);
       color: v.$color-primary;
@@ -72,8 +71,8 @@
     }
   }
   .stars{
-    @include m.flexbox(row, center, center, clamp(10px, 2vw, 20px));
     color: v.$color-primary;
+    @include m.flexbox(row, center, center, clamp(10px, 2vw, 20px));
       i{
         font-size: clamp(18px, 3vw, 24px);
       }
