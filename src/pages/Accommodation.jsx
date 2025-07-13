@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useParams, useNavigate } from "react-router-dom";
 import { NotFound } from "./NotFound";
 import { Carousel } from "@/components/Carousel";
 import { Collapse } from "@/components/Collapse";
@@ -8,16 +8,24 @@ import { StarsRating } from "@/components/StarRating";
 import "@/styles/Pages/accomodation.scss";
 
 export function Accomodation() {
-  const data = useLoaderData();
-  const { id } = useParams();
-  const [logement, setLogement] = useState(null);
+  const data = useLoaderData()
+  const navigate = useNavigate()
+  
+  const { id } = useParams()
+  const [logement, setLogement] = useState(null)
 
   useEffect(() => {
-    const found = data.find((item) => item.id === id);
-    setLogement(found);
-  }, [id, data]);
+    if (data && id) {
+      const found = data.find((item) => item.id === id);
+      if (!found) {
+        navigate("/404");
+      } else {
+        setLogement(found);
+      }
+    }
+  }, [id, data, navigate]);
 
-  if (!logement) return <NotFound />;
+  if (!logement) return null;
 
   return (
     <main>
@@ -57,7 +65,9 @@ export function Accomodation() {
           title="Équipements"
           text={logement.equipments.map((equipement, index) => (
             <p key={index}>{equipement}</p>
-          ))}
+          ))
+         }
+          headingLevel="h3"
         />
       </div>
     </main>

@@ -15,31 +15,34 @@ const router = createBrowserRouter([
             {
                 index:true,
                 element:<Home/>,
-                loader: () => getAnnounce()
+                loader: getAnnounce,
+                HydrateFallback: () => null
             },
             {
                 path:'apropos', 
                 element:<About/>,
-                loader: () => getAnnounce()
+                loader: getAnnounce,
+                HydrateFallback: () => null
             },
             {
                 path:'logement/:id', 
                 element:<Accomodation/>,
-                loader: () => getAnnounce()
+                loader: getAnnounce,
+                HydrateFallback: () => null
             },
             {
                 path:'*', 
                 element:<NotFound/>
             },
         ],
-    },
-])
 
+    },   
+])
 export default function AppRouter() {
     return (
     <RouterProvider
       router={router}
-      fallbackElement={<p>Chargement en cours…</p>} // ✅ Ajouté
+
     />
   );
 }
