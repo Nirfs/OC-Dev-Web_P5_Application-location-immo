@@ -17,7 +17,7 @@ export function Carousel({data}){
     }
 
     return(
-        <div className="carousel-container">
+        <section className="carousel-container">
             <img src={data.pictures[index]} alt={data.title + "photo n° " + index + 1}/>
             {data.pictures.length > 1 &&
                 <>
@@ -25,14 +25,14 @@ export function Carousel({data}){
                         <button
                                 onClick={handleNextClick}
                                 className="carousel-button"
-                                aria-label="Image suivante"
+                                aria-label="Image précedente"
                         >
                                 <i onClick={handlePrevClick} className="fa-solid fa-chevron-left"></i>
                         </button>   
                         <button
                                 onClick={handleNextClick}
                                 className="carousel-button"
-                                aria-label="Image precédente"
+                                aria-label="Image suivante"
                         >
                             <i onClick={handleNextClick} className="fa-solid fa-chevron-right"></i></button>
                     </div>
@@ -44,6 +44,6 @@ export function Carousel({data}){
                     }
                 </>
             }
-        </div>
+        </section>
     )
 }
