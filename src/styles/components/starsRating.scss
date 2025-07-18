@@ -1,0 +1,15 @@
+@use '../abstract/mixins' as m;
+@use '../abstract/variables' as v;
+
+.stars {
+    color: v.$color-primary;
+    @include m.flexbox(row, center, center, clamp(10px, 2vw, 15px));
+
+    i {
+      font-size: clamp(18px, 3vw, 24px);
+    }
+
+    .empty {
+      color: v.$color-grey;
+    }
+}

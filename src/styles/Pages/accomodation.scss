@@ -5,10 +5,12 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 80px;
+
   @include m.media(v.$breakpoints-medium) {
-  @include m.flexbox(column, center, center, 20px);
-    .collpase-Container{
-        width: 100%;
+    @include m.flexbox(column, center, center, 20px);
+
+    .collpase-Container {
+      width: 100%;
     }
   }
 }
@@ -16,6 +18,7 @@
 .title-container {
   margin-bottom: 20px;
   @include m.flexbox(row, space-between, flex-start, 20px);
+
   @include m.media(v.$breakpoints-medium) {
     @include m.flexbox(column);
   }
@@ -31,20 +34,6 @@
       font-weight: v.$font-weight-medium;
       font-size: v.$font-size-mg;
     }
-
-    .tag-container {
-      margin-top: 20px;
-      @include m.flexbox(row, left, center, 10px);
-
-      .tag {
-        color: v.$color-white;
-        font-size: clamp(v.$font-size-xxs, 3vw, v.$font-size-sm);
-        font-weight: v.$font-weight-bold;
-        background-color: v.$color-primary;
-        padding: 3px 10px;
-        border-radius: 10px;
-      }
-    }
   }
 
   .profil-container {
@@ -52,7 +41,7 @@
 
     @include m.media(v.$breakpoints-medium) {
       width: 100%;
-      @include m.flexbox(row-reverse,space-between, center);
+      @include m.flexbox(row-reverse, space-between, center);
     }
   }
 
@@ -69,16 +58,5 @@
       text-align: right;
       color: v.$color-primary;
     }
-  }
-  .stars{
-    color: v.$color-primary;
-    @include m.flexbox(row, center, center, clamp(10px, 2vw, 20px));
-      i{
-        font-size: clamp(18px, 3vw, 24px);
-      }
-
-      .empty{
-        color: v.$color-grey;
-      }
   }
 }

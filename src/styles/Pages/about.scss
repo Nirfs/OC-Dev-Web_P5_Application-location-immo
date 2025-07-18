@@ -1,10 +1,13 @@
 @use '../abstract/mixins' as m;
 @use '../abstract/variables' as v;
 
-.about-collapse-container{
-    margin: 50px 10%;
-    @include m.flexbox(column, start, start, 30px);
-    @include m.media(v.$breakpoints-medium){
-        margin: 30px 0; 
-    }
+.about-collapse-container {
+
+  margin: 50px 10%;
+  
+  @include m.flexbox(column, flex-start, flex-start, 30px);
+
+  @include m.media(v.$breakpoints-medium) {
+    margin: 30px 5%;
+  }
 }

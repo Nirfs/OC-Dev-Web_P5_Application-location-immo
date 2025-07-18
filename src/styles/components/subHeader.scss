@@ -32,16 +32,10 @@
         font-size: clamp(v.$font-size-xl, 4vw, v.$font-size-xxxl);
         font-weight: v.$font-weight-bold;    
         line-height: v.$line-height-normal;
-        .mobile-break{
-                display: none;
-        }
         @include m.media(v.$breakpoints-large){
             left: 45%;
             width: 80%;
             line-height: v.$line-height-small;
-            .mobile-break{
-                display: inline;
-            }
         }  
     }
 }

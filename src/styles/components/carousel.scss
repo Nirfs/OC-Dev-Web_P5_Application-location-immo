@@ -1,19 +1,29 @@
 @use '../abstract/mixins' as m;
 @use '../abstract/variables' as v;
+
 .carousel-container {
   position: relative;
-  overflow: hidden;
   height: clamp(255px, 30vw, 415px);
+  overflow: hidden;
   border-radius: 25px;
   margin-bottom: 10px;
 
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-}
+  .image-container {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+    height: clamp(255px, 30vw, 415px);
+    align-content: center;
+  }
+
+  .image-slide {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   .fa-chevron-left,
   .fa-chevron-right {
@@ -35,7 +45,7 @@ img {
     right: 5%;
   }
 
-  .carousel-status{
+  .carousel-status {
     text-shadow: 5px 2px 15px v.$color-black;
     color: white;
     position: absolute;

@@ -15,7 +15,7 @@ body {
   color: v.$color-dark;
 }
 
-.main-container{
+header, main{
     margin: 0 clamp(20px, 4vw, 100px);
 }
 

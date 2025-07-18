@@ -2,7 +2,7 @@
 
 // flexbox
 @mixin flexbox($direction: null, $justify: null, $align: null, $gap: null) {
-  &{
+    &{
       display: flex;
 
     @if $direction != null {
@@ -31,32 +31,36 @@
 
 // transition animation
 @mixin transition($properties: all, $duration: .3s, $timing: ease-in-out) {
-  transition: $properties $duration $timing;
+  &{
+    transition: $properties $duration $timing;
+  }
 }
 
 @mixin linkHover(){
-  a{  
-    color: v.$color-black;
-    position: relative;
-    font-weight: 500;
+  &{
+    a{  
+      color: v.$color-black;
+      position: relative;
+      font-weight: 500;
 
-    &::after{
-      content:"";
+      &::after{
+        content:"";
 
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-            
-      background: v.$color-black;
-      width: 0;         
-      height: 2px;
-        @include transition(width, 0.4s, ease);
-          transform: translateX(-50%);
-        }
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+              
+        background: v.$color-black;
+        width: 0;         
+        height: 2px;
+          @include transition(width, 0.4s, ease);
+            &{transform: translateX(-50%);}
+          }
 
-        &:hover::after,
-        &.active::after{
-          width: 100%;
-        }
+          &:hover::after,
+          &.active::after{
+            width: 100%;
+          }
+    }
   }
 }

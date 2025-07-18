@@ -8,6 +8,7 @@ footer{
     background-color: v.$color-black;
     color: v.$color-white;
     font-size: clamp(v.$space-sm, 2vw, v.$font-size-xl);
+    
     @include m.flexbox(column, center, center, 32px);
     @include m.media(v.$breakpoints-small){
         p{

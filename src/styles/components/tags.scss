@@ -1,0 +1,16 @@
+@use '../abstract/mixins' as m;
+@use '../abstract/variables' as v;
+
+.tag-container {
+      margin-top: 20px;
+      @include m.flexbox(row, left, center, 10px);
+
+      .tag {
+        color: v.$color-white;
+        font-size: clamp(v.$font-size-xxs, 3vw, v.$font-size-sm);
+        font-weight: v.$font-weight-bold;
+        background-color: v.$color-primary;
+        padding: 3px 10px;
+        border-radius: 10px;
+      }
+    }

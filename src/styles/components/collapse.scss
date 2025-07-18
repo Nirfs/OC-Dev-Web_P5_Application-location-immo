@@ -1,40 +1,53 @@
 @use '../abstract/mixins' as m;
 @use '../abstract/variables' as v;
 
-    .collapse-bar{
-        width: 100%;
-        border: none;
-        background-color: v.$color-primary;
-        padding: clamp(10px, 2vw, 15px) 20px;
-        transition: all 0.3s ease;
-        border-radius: 5px;
-        @include m.flexbox(row, space-between, center);
-        i{
-            color: v.$color-white;
-            transform: rotate(0deg);
-            transition: all 0.3s ease;
-        }
-        &.open{
-            i{
-                transform: rotate(-180deg);
-            }
-        }
-        .title{
-            color: v.$color-white;
-            font-size: clamp(v.$font-size-sm, 4vw, v.$font-size-xl);
-            font-weight: v.$font-weight-bold;
-        }
-    }
-    .text {
-        max-height: 0;
-        overflow: hidden;
-        @include m.transition();
-        padding: 0px 15px;
+.collapse-bar {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: clamp(10px, 2vw, 15px) 20px;
+  background-color: v.$color-primary;
 
-        p{
-            font-size: clamp(v.$font-size-xs, 3vw, v.$font-size-mg);
-            padding: 5px 20px;
-        }
-    }
+  @include m.flexbox(row, space-between, center);
+  @include m.transition();
 
-    
+  i {
+    color: v.$color-white;
+    transform: rotate(0deg);
+    @include m.transition();
+  }
+
+  &.open i {
+    transform: rotate(-180deg);
+  }
+
+  .title {
+    color: v.$color-white;
+    font-size: clamp(v.$font-size-sm, 4vw, v.$font-size-xl);
+    font-weight: v.$font-weight-bold;
+  }
+}
+
+.text {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 15px;
+  background-color: v.$color-light-grey;
+
+  @include m.transition();
+
+  ul {
+    padding: 20px 0;
+    list-style: none;
+  }
+
+  li,
+  p {
+    font-size: clamp(v.$font-size-xs, 3vw, v.$font-size-mg);
+    padding: 0;
+  }
+
+  p {
+    padding: 20px 0;
+  }
+}
