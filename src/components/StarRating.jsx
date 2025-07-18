@@ -1,13 +1,28 @@
+import '@/styles/components/starsRating.scss'
+/**
+ * Composant StarsRating
+ *
+ * Affiche une note sous forme d’étoiles remplies et vides.
+ * La note est arrondie à l’entier inférieur.
+ *
+ * @component
+ *
+ * @param {Object} props - Les propriétés du composant.
+ * @param {string|number} props.rating - La note à afficher.
+ * @param {string|number} props.id - Identifiant unique utilisé pour la clé des étoiles.
+ * Appeler dans Accomodation.jsx, scss dispo dans starsRating.scss
+ */
+
 export function StarsRating({ rating,id }) {
   const filled = parseInt(rating);
   const total = 5;
 
   return (
     <div className="stars">
-      {[...Array(total)].map((_, i) => (
+      {[...Array(total)].map((_, index) => (
         <i
-          key={i + id + rating}
-          className={`fa-star ${i < filled ? 'fas' : 'fas empty'}`}
+          key={index + id + rating}
+          className={`fa-star ${index < filled ? 'fas' : 'fas empty'}`}
         ></i>
       ))}
     </div>
