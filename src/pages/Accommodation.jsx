@@ -1,55 +1,44 @@
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams, useNavigate } from "react-router-dom";
+import { useLoaderData, useParams} from "react-router-dom";
 import { NotFound } from "./NotFound";
 import { Carousel } from "@/components/Carousel";
 import { Collapse } from "@/components/Collapse";
 import { StarsRating } from "@/components/StarRating";
-
+import { NameSplit } from "@/components/NameSplit";
+import { Tags } from "@/components/Tags";
 import "@/styles/Pages/accomodation.scss";
 
 export function Accomodation() {
-  const data = useLoaderData()
-  const navigate = useNavigate()
+  const AnnoncesList = useLoaderData()
   
   const { id } = useParams()
   const [logement, setLogement] = useState(null)
 
   useEffect(() => {
-    if (data && id) {
-      const found = data.find((item) => item.id === id);
-      if (!found) {
-        navigate("/404");
-      } else {
+      const found = AnnoncesList.find((item) => item.id === id);
+      if (found) {
         setLogement(found);
       }
-    }
-  }, [id, data, navigate]);
+    }, [id, AnnoncesList]);
 
-  if (!logement) return null;
+  if (AnnoncesList && id && !logement) {
+    return <NotFound />;
+  }
 
   return (
-    <main>
-      <Carousel data={logement} />
+    <>
+      <Carousel pictures={logement.pictures} title={logement.title}/>
 
-      <div className="title-container">
+      <section className="title-container">
         <div className="title">
           <h2>{logement.title}</h2>
           <p className="location">{logement.location}</p>
-          <div className="tag-container">
-            {logement.tags.map((tag, index) => (
-              <p className="tag" key={`${index}-${tag}`}>
-                {tag}
-              </p>
-            ))}
-          </div>
+          <Tags logement = {logement}/>
         </div>
 
         <div className="profil-container">
           <div className="avatar">
-            <p>
-              {logement.host.name.split(" ")[0]}<br />
-              {logement.host.name.split(" ")[1]}
-            </p>
+            <NameSplit logement = {logement}/>
             <img
               src={logement.host.picture}
               alt={`Photo de ${logement.host.name}`}
@@ -57,19 +46,22 @@ export function Accomodation() {
           </div>
           <StarsRating rating={logement.rating} id={logement.id}/>
         </div>
-      </div>
+      </section>
 
-      <div className="accomodation-collapse-container">
+      <section className="accomodation-collapse-container">
         <Collapse title="Description" text={<p>{logement.description} </p>} headingLevel="h3" />
         <Collapse
           title="Équipements"
-          text={logement.equipments.map((equipement, index) => (
-            <p key={index}>{equipement}</p>
-          ))
-         }
+          text={
+            <ul>
+              {logement.equipments.map((equipement, index) => (
+                <li key={index}>{equipement}</li>
+              ))}
+            </ul>
+          }
           headingLevel="h3"
         />
-      </div>
-    </main>
+      </section>
+    </>
   );
 }

@@ -1,7 +1,11 @@
 import { Link, NavLink } from 'react-router-dom';
+import { useScreenWidth } from "@/hook/useScreenWidth.jsx"
 import '@/styles/components/header.scss'
 import kasaLogo from '@/assets/logoKasa.svg'
-import { useScreenWidth } from "@/hook/useScreenWidth.jsx"
+
+/**
+*style disponible dans header.scss
+*/
 
 export function Header(){
     const screenWidth = useScreenWidth()
