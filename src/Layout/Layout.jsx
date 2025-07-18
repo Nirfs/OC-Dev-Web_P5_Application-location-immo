@@ -6,10 +6,10 @@ import "@/styles/global.scss";
 export function Layout(){ 
     return(
         <>
-            <div className='main-container'>
-                <Header/>
+            <Header/>
+            <main>
                 <Outlet/>
-            </div>
+            </main>
             <Footer/>
         </>
     )

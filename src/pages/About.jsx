@@ -4,7 +4,7 @@ import { Collapse } from "@/components/Collapse"
 import '@/styles/Pages/about.scss'
 export function About(){
     return (
-        <main>
+        <>
             <SubHeader src={subHeadermoutain} alt="photo de montagne avec une vallée en premier plan" brightness="light"/>
             <section className="about-collapse-container">
                 <Collapse title="Fiabilité" 
@@ -29,6 +29,6 @@ export function About(){
                     standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.</p>}
                 />
             </section>
-        </main>
+        </>
     )
 }

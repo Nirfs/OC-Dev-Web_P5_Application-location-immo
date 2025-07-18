@@ -1,40 +1,54 @@
 import { useState } from "react"
 import '@/styles/components/carousel.scss'
 import { useScreenWidth } from "@/hook/useScreenWidth.jsx"
+/**
+ * Affiche un carrousel d’images avec des boutons de navigation.
+ * 
+ * @component
+ * @param {Object} props - Les propriétés du composant.
+ * @param {string[]} props.pictures - Tableau d'URL des images à afficher.
+ * @param {string} props.title - Utilisé pour les `alt` et les `key`.
+ * 
+ * Appeler dans Accomodation.jsx, scss dispo dans carousel.scss
+ */
 
-export function Carousel({data}){
+export function Carousel({pictures, title}){
     const screenWidth = useScreenWidth()
     const screenSizeBreak = 768
 
     const [index, setIndex] = useState(0)
-    const total = data.pictures.length
+    const total = pictures.length
 
     const handleNextClick = ()=>{
-        setIndex(index < data.pictures.length - 1 ? index + 1 : 0)
+        setIndex(index < pictures.length - 1 ? index + 1 : 0)
     }
     const handlePrevClick = ()=>{
-        setIndex(index === 0 ? data.pictures.length - 1 : index - 1)   
+        setIndex(index === 0 ? pictures.length - 1 : index - 1)   
     }
 
     return(
         <section className="carousel-container">
-            <img src={data.pictures[index]} alt={data.title + "photo n° " + index + 1}/>
-            {data.pictures.length > 1 &&
+            <div className="image-container" style={{ transform: `translateX(-${index * 100}%)`}}>
+                {pictures.map((picture, index) =>(
+                    <img key={title + index }src={picture} alt={title + "photo n° " + index} className="image-slide"/>
+                ))}
+            </div>
+            {pictures.length > 1 &&
                 <>
                     <div>
                         <button
-                                onClick={handleNextClick}
+                                onClick={handlePrevClick}
                                 className="carousel-button"
-                                aria-label="Image précedente"
+                                aria-label="Image précédente"
                         >
-                                <i onClick={handlePrevClick} className="fa-solid fa-chevron-left"></i>
+                                <i className="fa-solid fa-chevron-left"></i>
                         </button>   
                         <button
                                 onClick={handleNextClick}
                                 className="carousel-button"
                                 aria-label="Image suivante"
                         >
-                            <i onClick={handleNextClick} className="fa-solid fa-chevron-right"></i></button>
+                            <i className="fa-solid fa-chevron-right"></i></button>
                     </div>
                     {screenWidth > screenSizeBreak ?
                     <div className="carousel-status" aria-hidden="true">

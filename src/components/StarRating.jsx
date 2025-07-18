@@ -3,10 +3,8 @@ import '@/styles/components/starsRating.scss'
  * Composant StarsRating
  *
  * Affiche une note sous forme d’étoiles remplies et vides.
- * La note est arrondie à l’entier inférieur.
  *
  * @component
- *
  * @param {Object} props - Les propriétés du composant.
  * @param {string|number} props.rating - La note à afficher.
  * @param {string|number} props.id - Identifiant unique utilisé pour la clé des étoiles.
