@@ -4,24 +4,17 @@ import { NotFound } from "./NotFound";
 import { Carousel } from "@/components/Carousel";
 import { Collapse } from "@/components/Collapse";
 import { StarsRating } from "@/components/StarRating";
-import { NameSplit } from "@/components/NameSplit";
+import { Profil } from "@/components/Profil";
 import { Tags } from "@/components/Tags";
 import "@/styles/Pages/accomodation.scss";
 
 export function Accomodation() {
   const AnnoncesList = useLoaderData()
-  
   const { id } = useParams()
-  const [logement, setLogement] = useState(null)
+  const logement = AnnoncesList.find((item) => item.id === id);
 
-  useEffect(() => {
-      const found = AnnoncesList.find((item) => item.id === id);
-      if (found) {
-        setLogement(found);
-      }
-    }, [id, AnnoncesList]);
-
-  if (AnnoncesList && id && !logement) {
+  
+  if (!logement) {
     return <NotFound />;
   }
 
@@ -38,11 +31,7 @@ export function Accomodation() {
 
         <div className="profil-container">
           <div className="avatar">
-            <NameSplit logement = {logement}/>
-            <img
-              src={logement.host.picture}
-              alt={`Photo de ${logement.host.name}`}
-            />
+            <Profil logement = {logement} src={logement.host.picture} alt={`Photo de ${logement.host.name}`}/>
           </div>
           <StarsRating rating={logement.rating} id={logement.id}/>
         </div>
