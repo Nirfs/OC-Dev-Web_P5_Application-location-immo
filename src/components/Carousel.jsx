@@ -1,6 +1,6 @@
 import { useState } from "react"
 import '@/styles/components/carousel.scss'
-import { useScreenWidth } from "@/hook/ScreenWidthContext.jsx"
+import { useScreenWidth } from "@/hook/ScreenWitdh/useScreenWidth.js"
 /**
  * Affiche un carrousel d’images avec des boutons de navigation.
  * 
@@ -14,7 +14,7 @@ import { useScreenWidth } from "@/hook/ScreenWidthContext.jsx"
 
 export function Carousel({pictures, title}){
     const screenWidth = useScreenWidth()
-    const screenSizeBreak = 768
+    const screenSizeBreak = 1024
 
     const [index, setIndex] = useState(0)
     const total = pictures.length

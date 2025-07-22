@@ -1,7 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import { Card } from "@/components/Card";
 import { SubHeader } from "@/components/SubHeader";
-import { useScreenWidth } from "@/hook/ScreenWidthContext.jsx"
+import { useScreenWidth } from "@/hook/ScreenWitdh/useScreenWidth.js"
 
 import subHeadercliff from '@/assets/sub_header_cliff.webp'
 import '@/styles/Pages/home.scss'
