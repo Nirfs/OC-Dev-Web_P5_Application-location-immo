@@ -7,8 +7,8 @@
         margin: 90px 0 90px 0;
     }
 
-    @include m.flexbox(column, center, center, 90px);
-    h1{
+    @include m.flexbox(column, center, center, 80px);
+    h2{
         color: v.$color-primary;
         font-size: clamp(96px, 15vw, 288px);
     }

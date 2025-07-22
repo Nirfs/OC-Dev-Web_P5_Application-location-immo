@@ -6,7 +6,7 @@
     overflow: hidden;
     height: clamp(110px, 20vw, 223px);
     margin-bottom: 30px;
-    box-shadow: 4px 4px 15px v.$color-black;
+    box-shadow: 0 4px 4px v.$color-black-alpha;
     border-radius: 25px;
     background-color: v.$color-black;
     @include m.flexbox(column);
