@@ -1,5 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
-import { useScreenWidth } from "@/hook/useScreenWidth.jsx"
+import { useScreenWidth } from "@/hook/ScreenWidthContext.jsx"
 import '@/styles/components/header.scss'
 import kasaLogo from '@/assets/logoKasa.svg'
 

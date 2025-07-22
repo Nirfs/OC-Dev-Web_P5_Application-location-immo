@@ -1,6 +1,6 @@
 import { useState } from "react"
 import '@/styles/components/carousel.scss'
-import { useScreenWidth } from "@/hook/useScreenWidth.jsx"
+import { useScreenWidth } from "@/hook/ScreenWidthContext.jsx"
 /**
  * Affiche un carrousel d’images avec des boutons de navigation.
  * 

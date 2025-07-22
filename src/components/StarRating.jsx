@@ -16,13 +16,13 @@ export function StarsRating({ rating,id }) {
   const total = 5;
 
   return (
-    <div className="stars">
+    <ul className="stars">
       {[...Array(total)].map((_, index) => (
         <i
           key={index + id + rating}
           className={`fa-star ${index < filled ? 'fas' : 'fas empty'}`}
         ></i>
       ))}
-    </div>
+    </ul>
   );
 }
