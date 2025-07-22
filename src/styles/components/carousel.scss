@@ -10,10 +10,10 @@
 
   .image-container {
     display: flex;
-    transition: transform 0.5s ease;
     width: 100%;
     height: clamp(255px, 30vw, 415px);
     align-content: center;
+    @include m.transition();
   }
 
   .image-slide {

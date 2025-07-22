@@ -25,16 +25,17 @@
 
     h2{
         position: absolute;
-        color: v.$color-white;
         top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+        color: v.$color-white;
+        transform: translateY(-50%);
         font-size: clamp(v.$font-size-xl, 4vw, v.$font-size-xxxl);
         font-weight: v.$font-weight-bold;    
         line-height: v.$line-height-normal;
         @include m.media(v.$breakpoints-large){
-            left: 45%;
-            width: 80%;
+            text-align: left;
+            padding-left: 40px;
             line-height: v.$line-height-small;
         }  
     }

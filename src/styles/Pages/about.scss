@@ -8,6 +8,7 @@
   @include m.flexbox(column, flex-start, flex-start, 30px);
 
   @include m.media(v.$breakpoints-medium) {
-    margin: 30px 5%;
+    margin: 30px 0;
+    gap: 15px;
   }
 }
