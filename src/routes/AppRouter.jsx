@@ -20,8 +20,6 @@ const router = createBrowserRouter([
             {
                 path:'apropos', 
                 element:<About/>,
-                loader: getAnnounce,
-                HydrateFallback: () => null
             },
             {
                 path:'logement/:id', 
