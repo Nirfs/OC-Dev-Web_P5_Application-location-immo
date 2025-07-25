@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
 import { useLoaderData, useParams} from "react-router-dom";
+import { useScollTo } from "@/hook/ScrollTo/useScrollTo"
 import { NotFound } from "./NotFound";
 import { Carousel } from "@/components/Carousel";
 import { Collapse } from "@/components/Collapse";
@@ -9,6 +9,7 @@ import { Tags } from "@/components/Tags";
 import "@/styles/Pages/accomodation.scss";
 
 export function Accomodation() {
+  const scrollToTop = useScollTo();
   const AnnoncesList = useLoaderData()
   const { id } = useParams()
   const logement = AnnoncesList.find((item) => item.id === id);

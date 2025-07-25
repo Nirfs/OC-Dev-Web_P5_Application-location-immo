@@ -1,8 +1,12 @@
 import { SubHeader } from "@/components/SubHeader"
 import subHeadermoutain from '@/assets/sub_header_moutain.webp'
 import { Collapse } from "@/components/Collapse"
+import { useScollTo } from "@/hook/ScrollTo/useScrollTo"
 import '@/styles/Pages/about.scss'
+
 export function About(){
+    const scrollToTop = useScollTo();
+
     return (
         <>
             <SubHeader src={subHeadermoutain} alt="photo de montagne avec une vallée en premier plan" brightness="light"/>

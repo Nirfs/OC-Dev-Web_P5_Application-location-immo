@@ -2,12 +2,14 @@ import { useLoaderData } from "react-router-dom";
 import { Card } from "@/components/Card";
 import { SubHeader } from "@/components/SubHeader";
 import { useScreenWidth } from "@/hook/ScreenWitdh/useScreenWidth.js"
-
+import { useScollTo } from "@/hook/ScrollTo/useScrollTo";
 import subHeadercliff from '@/assets/sub_header_cliff.webp'
 import '@/styles/Pages/home.scss'
 
-export function Home() {
-  const data = useLoaderData()
+
+export function Home() {    
+  const scrollToTop = useScollTo();
+  const AnnoncesList = useLoaderData()
   const screenWidth = useScreenWidth();
   const screenSizeBreak = screenWidth < 1024;
 
@@ -22,7 +24,7 @@ export function Home() {
         brightness="dark"
     />
       <section className="gallery" aria-label="Liste des logements">
-        {data.map((logement) => (
+        {AnnoncesList.map((logement) => (
           <div key={logement.id} >
             
             <Card src={logement.cover} alt={`photo d'un ${logement.title}`} text={logement.title} navLink={`/logement/${logement.id}`}/>
