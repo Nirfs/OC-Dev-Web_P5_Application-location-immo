@@ -1,16 +1,18 @@
 import { useLoaderData } from "react-router-dom";
 import { Card } from "@/components/Card";
 import { SubHeader } from "@/components/SubHeader";
-import { useScreenWidth } from "@/hook/ScreenWitdh/useScreenWidth.js"
 import { useScollTo } from "@/hook/ScrollTo/useScrollTo";
 import subHeadercliff from '@/assets/sub_header_cliff.webp'
 import '@/styles/Pages/home.scss'
+import { ScreenWidthContext } from "@/hook/ScreenWitdh/ScreenWidthContext";
+import { useContext } from "react";
 
 
 export function Home() {    
   const scrollToTop = useScollTo();
+
   const AnnoncesList = useLoaderData()
-  const screenWidth = useScreenWidth();
+  const screenWidth = useContext(ScreenWidthContext);
   const screenSizeBreak = screenWidth < 1024;
 
   return (
@@ -18,7 +20,7 @@ export function Home() {
       <SubHeader src={subHeadercliff} alt="paysage de falaise" 
         text={
         <>
-        Chez vous,{screenSizeBreak ? <br/> : " "}partout et ailleurs
+          Chez vous,{screenSizeBreak ? <br/> : " "}partout et ailleurs
         </>
         } 
         brightness="dark"

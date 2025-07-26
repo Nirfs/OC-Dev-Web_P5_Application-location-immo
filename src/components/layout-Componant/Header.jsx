@@ -1,14 +1,15 @@
 import { Link, NavLink } from 'react-router-dom';
-import { useScreenWidth } from "@/hook/ScreenWitdh/useScreenWidth.js"
 import '@/styles/components/header.scss'
 import kasaLogo from '@/assets/logoKasa.svg'
+import { useContext } from 'react';
+import { ScreenWidthContext } from '@/hook/ScreenWitdh/ScreenWidthContext';
 
 /**
 *style disponible dans header.scss
 */
 
 export function Header(){
-    const screenWidth = useScreenWidth()
+    const screenWidth = useContext(ScreenWidthContext)
     const screenSizeBreak = 1024
 
     return(
